@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>SafeArea<small>.Space</small></h1>
+        </div>
+    </header>
+
+    <main role="main">
+        <div class="container">
+            <div class="row">
+                <div class="col border border-dark text-center">
+                    <h3 class="font-italic px-5">"If you must speak ill of another, do not speak it. Write it in the sand near the water's edge." -
+                        Napoleon Hill</h3>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col border border-dark text-monospace pt-3">
+                    <!-- This needs to:
+                    1. Indent the first line
+                    2. Initialize collapsed to just the last paragraph -->
+                    <!-- <p>Holding on to negative thoughts can lead to increased stress and poor physical and mental health. Reframing those thoughts into
+                        positive ones is a good way to overcome the situation and rid yourself of negative stress.</p>
+
+                    <p>Sometimes you just want to let that emotion out (whether it's anger, frustration, fear, depression, or whatever), but worry
+                        that a moment of impulse might affect your relationship with someone else. Instead of expressing yourself, you suppress that
+                        desire by pushing it away or worse, by telling yourself you're wrong to have thought that way.</p> -->
+
+                    <p>Write your thoughts in the box below. When you are done, press "Send", and what you have written will disappear forever.
+                        Nothing is saved or sent anywhere. This exists so you can be impulsive and act on your emotions without jeopardizing your
+                        relationships with others. Press "Send" and release the stress without fear.</p>
+                </div>
+                <!-- 1. Need links here to expand/collapse this text box  -->
+            </div>
+            <div class="row my-2" style="min-height: 350px;">
+                <div class="col px-0">
+                    <textarea class="w-100 h-100 bg-light p-3" id="blurbtext" placeholder="What do you want to say?"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-right">
+                    <!-- This needs to:
+                    1. Display a modal asking if the person wants to copy the content to the clipboard
+                    2. If so, it has to save the content
+                    3. If not, the box is cleared via vanilla js -->
+                    <div class="btn btn-success w-25" id="blurbSend">Send</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <!-- This is where the link to another page that explains how the content is protected. -->
+            <!-- <a href="protection.html">Read</a> how this page works to make sure your comments aren't saved or sent anywhere. -->
+        </div>
+    </footer>
+    <script src="scripts/jquery-3.5.1.min.js"></script>
+    
+    <script>
+        $("#blurbSend").click(function () {
+            $("#blurbtext").val('');
+        });
+    </script>
+</body>
+
+</html>
