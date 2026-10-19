@@ -20,20 +20,24 @@
         <div class="container">
             <div class="row">
                 <div class="col border border-dark text-center">
-                    <h3 class="font-italic px-5">"If you must speak ill of another, do not speak it. Write it in the sand near the water's edge." -
+                    <h3 class="font-italic px-5">"If you must speak ill of another, do not speak it. Write it in the
+                        sand near the water's edge." -
                         Napoleon Hill</h3>
                 </div>
             </div>
             <div class="row mt-1">
                 <div class="col border border-dark text-monospace pt-3">
-                    <p>Write your thoughts in the box below. When you are done, press "Send", and what you have written will disappear forever.
-                        Nothing is saved or sent anywhere. This exists so you can be impulsive and act on your emotions without jeopardizing your
+                    <p>Write your thoughts in the box below. When you are done, press "Send", and what you have written
+                        will disappear forever.
+                        Nothing is saved or sent anywhere. This exists so you can be impulsive and act on your emotions
+                        without jeopardizing your
                         relationships with others. Press "Send" and release the stress without fear.</p>
                 </div>
             </div>
             <div class="row my-1">
                 <div class="col px-0">
-                    <textarea class="w-100 h-100 bg-light p-3" rows="5" id="blurbtext" placeholder="What do you want to say?"></textarea>
+                    <textarea class="w-100 h-100 bg-light p-3" rows="5" id="blurbtext"
+                        placeholder="What do you want to say?"></textarea>
                 </div>
             </div>
             <div class="row">
@@ -47,11 +51,10 @@
     <!-- <footer>
         <div class="container"> </div>
     </footer> -->
-    <script src="scripts/jquery-3.5.1.min.js"></script>
-    
+
     <script>
-        $("#blurbSend").click(function () {
-            $("#blurbtext").val('');
+        document.getElementById("blurbSend").addEventListener("click", function () {
+            document.getElementById("blurbtext").value = '';
         });
     </script>
 </body>
