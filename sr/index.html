@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Потпуно анониман и безбедан простор за ослобађање од стреса. Унесите своја осећања, притисните дугме за слање и гледајте како ваше поруке нестају y празнину.">
+    <title>SafeArea.Space | Vent Anonymously</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>
+                SafeArea<small>.Space</small>
+                <span
+                    style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">
+                    - Приватна безбедна зона или простор за избацивање емоција и ослобађање од стреса
+                </span>
+            </h1>
+            <div class="lang-selector">
+                <label for="lang">Језик: </label>
+                <select id="lang" class="lang-sel">
+                    <option value="en">English</option>
+                    <option value="ar">العربية (Arabic)</option>
+                    <option value="de">Deutsch (German)</option>
+                    <option value="es">Español (Spanish)</option>
+                    <option value="fr">Français (French)</option>
+                    <option value="sr">Српски (Serbian)</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        <div class="container">
+            <div class="row">
+                <div class="col border border-dark text-center">
+                    <h3 class="font-italic px-5">"Ако мораш да говориш лоше o другоме, немој то да говориш. Напиши то y песку близу ивице воде." -
+                        Napoleon Hill</h3>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col border border-dark text-monospace pt-3">
+                    <p>Напишите своје мисли у поље испод. Када завршите, притисните „Пошаљи“ и оно што сте написали ће заувек нестати у празнини. Ништа се не чува нити шаље нигде. Ово постоји да бисте могли бити импулсивни и деловати на основу својих емоција без угрожавања односа са другима. Притисните „Пошаљи“ и ослободите се стреса без страха.</p>
+                </div>
+            </div>
+            <div class="row my-1">
+                <div class="col px-0">
+                    <textarea class="w-100 h-100 bg-light p-3" rows="5" id="blurbtext"
+                        placeholder="Шта желиш да кажеш?"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-right">
+                    <button type="button" class="btn btn-success w-25" id="blurbSend">Пошаљи</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- <footer>
+        <div class="container"> </div>
+    </footer> -->
+
+    <script>
+        const languageEl = document.getElementById('lang');
+        // get current language
+        const currentPath = window.location.pathname;
+        const currLang = currentPath.split('/')[1];
+        const hasMatchingOption = Array.from(languageEl.options).some(option => option.value === currLang);
+        if (currLang && hasMatchingOption) {
+            languageEl.value = currLang;
+        } else {
+            languageEl.value = 'en';
+        }
+
+        languageEl.addEventListener('change', (e) => {
+            const newLang = e.target.value;
+            if (newLang) {
+                if (newLang == 'en') {
+                    window.location.href = '/';
+                } else {
+                    window.location.href = '/' + newLang + '/';
+                }
+            }
+        });
+
+        document.getElementById("blurbSend").addEventListener("click", function () {
+            document.getElementById("blurbtext").value = '';
+        });
+    </script>
+</body>
+
+</html>
