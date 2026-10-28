@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SafeArea.Space</title>
+
+</head>
+
+<body style="text-align: right">
+    <header>
+        <div class="container">
+            <h1>SafeArea<small>.Space</small></h1>
+        </div>
+    </header>
+
+    <main role="main">
+        <div class="container">
+            <div class="row">
+                <div class="col border border-dark text-center">
+                    <h3 class="font-italic px-5">"إذا كان لا بدّ من التحدث بسوء عن شخص آخر، فلا تتفوه بذلك. بل اكتبه على الرمل قرب حافة الماء."
+                        <br/>Napoleon Hill</h3>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col border border-dark text-monospace pt-3">
+                    <p>اكتب أفكارك في المربع أدناه. عند الانتهاء، اضغط على "إرسال"، وسيختفي ما كتبته نهائيًا. لن يتم حفظ أي شيء أو إرساله إلى أي مكان. هذه الميزة موجودة لتتيح لك التصرف باندفاع وفقًا لمشاعرك دون تعريض علاقاتك مع الآخرين للخطر.
+                        <br /> اضغط على زر "إرسال" وتخلص من التوتر دون خوف.
+                    </p>
+                </div>
+            </div>
+            <div class="row my-1">
+                <div class="col px-0">
+                    <textarea class="w-100 h-100 bg-light p-3" rows="5" id="blurbtext"
+                        placeholder="ماذا تريد أن تقول؟"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-right">
+                    <button type="button" class="btn btn-success w-25" id="blurbSend">إرسال</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- <footer>
+        <div class="container"> </div>
+    </footer> -->
+
+    <script>
+        document.getElementById("blurbSend").addEventListener("click", function () {
+            document.getElementById("blurbtext").value = '';
+        });
+    </script>
+</body>
+
+</html>
