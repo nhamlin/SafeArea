@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="site-header">
         <div class="container">
             <h1>SafeArea<small>.Space</small>
                 <span
@@ -20,6 +20,16 @@
                     - Ein privater, sicherer Bereich oder Raum, um Dampf abzulassen und Stress abzubauen
                 </span>
             </h1>
+            <div class="lang-selector">
+                <label for="lang">Sprache: </label>
+                <select id="lang" class="lang-sel">
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                </select>
+            </div>
         </div>
     </header>
 
@@ -60,6 +70,28 @@
     </footer> -->
 
     <script>
+        const languageEl = document.getElementById('lang');
+        // get current language
+        const currentPath = window.location.pathname;
+        const currLang = currentPath.split('/')[1];
+        const hasMatchingOption = Array.from(languageEl.options).some(option => option.value === currLang);
+        if (currLang && hasMatchingOption) {
+            languageEl.value = currLang;
+        } else {
+            languageEl.value = 'en';
+        }
+
+        languageEl.addEventListener('change', (e) => {
+            const newLang = e.target.value;
+            if (newLang) {
+                if (newLang == 'en') {
+                    window.location.href = '/';
+                } else {
+                    window.location.href = '/' + newLang + '/';
+                }
+            }
+        });
+
         document.getElementById("blurbSend").addEventListener("click", function () {
             document.getElementById("blurbtext").value = '';
         });
